@@ -31,7 +31,8 @@ app.post('/el-quarkus', async (req, res) => {
   } else {
     const response = await axios.post('http://a1c26ff7931e246a7b44b9670d3e81d7-458380765.us-east-1.elb.amazonaws.com:8080', req.body);
     console.log(response.data);
-    res.json({ message: 'el-quarkus', body: req.body, response: response.data });
+    console.log('before return');
+    return res.json({ message: 'el-quarkus', body: req.body, response: response.data });
   }
 });
 
